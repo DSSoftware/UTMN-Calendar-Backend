@@ -10,13 +10,13 @@ class database{
 		$this->db->set_charset("utf8mb4");
 	}
 
-    public function saveGoogleCode($code, $state){
+    public function saveGoogleCode($code, $user){
 		$bot_db = $this->db;
 		
 		$code = $bot_db->real_escape_string($code);
-		$state = $bot_db->real_escape_string($state);
+		$user = $bot_db->real_escape_string($user);
 
-		$req = "INSERT INTO `google_auth` (`code`, `user_info`) VALUES ('$code', '$state')" ;
+		$req = "INSERT INTO `google_auth` (`code`, `tg_id`) VALUES ('$code', '$user')" ;
 
 		$bot_db->query($req);
 	}

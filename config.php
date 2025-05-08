@@ -12,4 +12,6 @@ $database = array(
  	'port' => DB_PORT,
 );
 
+$internal_key = INTERNAL_TOKEN;
+
 ?>
