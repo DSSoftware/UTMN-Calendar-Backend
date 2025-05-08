@@ -4,7 +4,11 @@
     }
 
     .centerdiv {
+        padding: 10%;
+        width: fit-content;
 
+        border-radius: 25%;
+        background-color: #ddd;
     }
 
     .container{
