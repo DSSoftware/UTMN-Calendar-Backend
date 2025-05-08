@@ -53,10 +53,6 @@
 
 <?php
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
 require_once 'config.php';
 require_once 'database.php';
 
@@ -70,17 +66,17 @@ if ($_GET['code'] != null && $_GET['state'] != null) {
     $state_sign = $state_parts[2];
 
     if($state_timestamp < (time() + 5 * 60)){
-        echo(`<script>displayError("Время на подключение истекло.<br>Попробуй ещё раз.")</script>`);
+        echo('<script>displayError("Время на подключение истекло.<br>Попробуй ещё раз.")</script>');
         die();
     }
 
     $correct_sign = hash("sha256", "{$state_user}-{$state_timestamp}-{$internal_key}");
 
     if($correct_sign != $state_sign){
-        echo(`<script>displayError("Неверный запрос.<br>Попробуй ещё раз.")</script>`);
+        echo('<script>displayError("Неверный запрос.<br>Попробуй ещё раз.")</script>');
         die();
     }
 
     $db->saveGoogleCode($_GET['code'], $_GET['state_user']);
-    echo(`<script>displaySuccess("Ключ привязки будет проверен.<br>В случае успешной привязки ты получишь уведомление в Telegram.")</script>`);
+    echo('<script>displaySuccess("Ключ привязки будет проверен.<br>В случае успешной привязки ты получишь уведомление в Telegram.")</script>');
 }
