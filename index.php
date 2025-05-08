@@ -25,6 +25,7 @@
     <div class="centerdiv">
         <h1>Вход в Google</h1>
         <p>В случае успешной привязки ты получишь уведомление в Telegram.</p>
+        <p>Ты можешь закрыть это окно.</p>
         <a href="https://t.me/UTMNModeusBot">Перейти в бота</a>
     </div>
 </div>
