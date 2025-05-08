@@ -16,7 +16,7 @@ class database{
 		$code = $bot_db->real_escape_string($code);
 		$state = $bot_db->real_escape_string($state);
 
-		$req = "INSERT INTO `google_auth` (`code, `state`) VALUES ('$code', '$state')" ;
+		$req = "INSERT INTO `google_auth` (`code, `user_info`) VALUES ('$code', '$state')" ;
 
 		$bot_db->query($req);
 	}
