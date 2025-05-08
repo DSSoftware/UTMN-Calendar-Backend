@@ -65,8 +65,8 @@ if ($_GET['code'] != null && $_GET['state'] != null) {
     $state_timestamp = $state_parts[1];
     $state_sign = $state_parts[2];
 
-    if($state_timestamp < (time() + 5 * 60)){
-        echo('<script>displayError("Время на подключение истекло.<br>Попробуй ещё раз.")</script>');
+    if($state_timestamp < (time() - 5 * 60)){
+        echo('<script>displayError("Время на подключение истекло.<br>Запроси новую ссылку.")</script>');
         die();
     }
 
