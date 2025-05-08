@@ -77,6 +77,6 @@ if ($_GET['code'] != null && $_GET['state'] != null) {
         die();
     }
 
-    $db->saveGoogleCode($_GET['code'], $_GET['state_user']);
+    $db->saveGoogleCode($_GET['code'], $state_user);
     echo('<script>displaySuccess("Ключ привязки будет проверен.<br>В случае успешной привязки ты получишь уведомление в Telegram.")</script>');
 }
